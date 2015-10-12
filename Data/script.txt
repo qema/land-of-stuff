@@ -1,0 +1,796 @@
+NPC 0
+X 313
+Y 335
+NAME Storekeeper
+SPEECH Hi! Welcome to the store!
+REPLY _SKIP
+STORE
+
+NPC 1
+X 290
+Y 300
+NAME Dave
+SPEECH Hey, want a quest?
+REPLY _YES_NO
+IF_YES
+   SPEECH Okay then. Listen closely.
+   REPLY _SKIP
+   SPEECH The magicians at Magic Island have come up with a new improved magician hat.
+   REPLY _SKIP
+   SPEECH However, the hat has gone out of control and has taken over the island.
+   REPLY _SKIP
+   SPEECH Do you think you can help stop it before it's too late?
+   REPLY Sure, I guess. So what do we do first?
+   SPEECH Well only my friend knows where Magic Island is.
+   REPLY _SKIP
+   SPEECH So you'll need to talk to him and ask him where the coordinates are.
+   REPLY _SKIP
+   SPEECH Then with my magic powers I'll teleport you there.
+   REPLY _SKIP
+   SPEECH Sound good?
+   REPLY Sure. Where does your friend live?
+   SPEECH Somewhere in the Kui desert.
+   REPLY That's all you know?
+   SPEECH Yeah, what'd you expect, me to know his address or something? Pssh.
+   REPLY ...Okay...
+   SPEECH Well see you later.
+   REPLY Okay, bye!
+   MSG You've started the quest The Magic Hat!
+   TALKED
+   GOTO MagicHat
+END_IF
+IF_NO
+   SPEECH Okay then.
+   REPLY _SKIP
+   SPEECH  
+   REPLY  
+END_IF
+
+MagicHat:
+   TALK 27
+   IF_AC1
+      SPEECH Did you ask my friend yet?
+      REPLY Yes. He said to tell you the code is X92YU#~.
+      SPEECH Okay. I think I got this figured out.
+      REPLY _SKIP
+      SPEECH Shall we begin the spell?
+      REPLY Sure, I guess.
+      SPEECH Kamekay deyam mepelorttay veahty dedrioway oyat X92YU#~!
+      REPLY Wait, I blinked.
+      SPEECH Hey, you should be gone. What went wrong?
+      REPLY Maybe the Magic Hat has the whole place tele-blocked!
+      SPEECH Maybe...
+      REPLY So what should we do?
+      SPEECH Talk to The Sorcerer on Fum Island. Ask him to teleport you.
+      REPLY _SKIP
+      SPEECH Since it's closer to Magic Island, perhaps that can break the tele-block.
+      REPLY Okay. See you later!
+      TALKED
+      GOTO WhenDone
+   END_IF
+   IF_AC0
+      SPEECH Did you ask my friend yet?
+      REPLY No.
+      SPEECH  
+      REPLY  
+   END_IF
+WhenDone:
+   AC0
+   SLAY 01 09
+   IF_AC1
+      SPEECH Wow, you really did destroy the Magic Hat.
+      REPLY Oh yeah, I guess I did.
+      SPEECH Thank you so much! You've saved the world from destruction!
+      REPLY This reminds me of a Pokemon movie.
+      SPEECH A what?
+      REPLY Never mind.
+      SPEECH Anyway, here's your reward!
+      REPLY _SKIP
+      RMINV 11
+      MONEY 10000
+      INV 10
+      MSG You've completed the quest The Magic Hat!
+      GOTO RewardLost
+   END_IF
+   SPEECH You haven't killed it yet! The fate of the world rests in your hands!
+   REPLY Thanks for making me feel better...
+   SPEECH  
+   REPLY  
+RewardLost:
+   SPEECH Hello! Would you like another sword?
+   REPLY I guess, but wasn't yours special?
+   SPEECH Of course not. They're plastic.
+   REPLY Well that certainly makes me feel a lot better...
+   SPEECH Well anyway here's your sword.
+   REPLY _SKIP
+   INV 10
+NPC 2
+X 314
+Y 315
+NAME Bob
+AC0
+IF_MONEY 10
+   AC1
+END_IF
+SPEECH Do you want a pickaxe for 10 dollars?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -10
+   INV 14
+END_IF
+
+NPC 3
+X 300
+Y 314
+NAME Banker
+SPEECH Welcome to the bank!
+REPLY _SKIP
+BANK
+
+NPC 4
+X 313
+Y 349
+NAME Greg
+SPEECH Hello.
+REPLY What are you doing here?
+SPEECH Just standing here.
+REPLY Why?
+SPEECH Just because.
+REPLY Well, okay...
+
+NPC 5
+X 319
+Y 321
+NAME Ed the Farmer
+SPEECH Why hello, stranger!
+REPLY Hello! Got anything for me to do?
+SPEECH Why yes, I do!
+REPLY _SKIP
+SPEECH Could you please kill the ants in my garden?
+REPLY _SKIP
+SPEECH They've trampled all over my crops!
+REPLY Sure, but how could ants trample over your crops?
+SPEECH Well I don't know! Do you want to do it?
+REPLY _YES_NO
+IF_YES
+   SPEECH Thanks!
+   REPLY No problem.
+   MSG You've started the quest Ant Terminator!
+   GOTO AntTerminator
+END_IF
+SPEECH Well okay then.
+REPLY _SKIP
+SPEECH  
+REPLY  
+
+AntTerminator:
+   SLAY 05 00
+   IF_AC1
+      SPEECH Are you done yet?
+      REPLY Yep!
+      SPEECH Thank you! Here's 50 dollars.
+      REPLY Yay!
+      MONEY 50
+      MSG You've beat Ant Terminator!
+      AC0
+      GOTO Finished
+   END_IF
+   IF_AC0
+      SPEECH Are you done yet?
+      REPLY Not yet, sorry.
+   END_IF
+   SPEECH  
+   REPLY  
+Finished:
+   IF_AC1
+      SPEECH Thank you for killing the ants!
+      REPLY No problem!
+   END_IF
+   AC1
+
+NPC 6
+X 330
+Y 326
+NAME Sword Maker
+SPEECH Hello! Give me some iron ore or a puff scale,
+REPLY _SKIP
+SPEECH and I'll turn it into a sword.
+REPLY _SKIP
+SPEECH Do you want to do this?
+REPLY _YES_NO
+IF_YES
+   IF_INV 22
+      RMINV 22
+      INV 20
+   END_IF
+   IF_INV 15
+      RMINV 15
+      INV 2
+   END_IF
+END_IF
+
+NPC 7
+X 339
+Y 327
+NAME Shield Maker
+SPEECH Hello! Give me some iron ore or a puff scale,
+REPLY _SKIP
+SPEECH and I'll turn it into a shield.
+REPLY _SKIP
+SPEECH Do you want to do this?
+REPLY _YES_NO
+IF_YES
+   IF_INV 22
+      RMINV 22
+      INV 21
+   END_IF
+   IF_INV 15
+      RMINV 15
+      INV 7
+   END_IF
+END_IF
+
+NPC 8
+X 319
+Y 90
+NAME Banker
+SPEECH Welcome to the bank!
+REPLY _SKIP
+BANK
+
+NPC 9
+X 340
+Y 343
+NAME Storekeeper
+SPEECH Hi! Welcome to the store!
+REPLY _SKIP
+STORE
+
+NPC 10
+X 348
+Y 343
+NAME Banker
+SPEECH Welcome to the bank!
+REPLY _SKIP
+BANK
+
+NPC 11
+X 347
+Y 367
+NAME Zookeeper
+SPEECH Welcome to the Fid City Zoo!
+REPLY _SKIP
+
+NPC 12
+X 721
+Y 700
+NAME Air Strike
+AC0
+IF_MONEY 3000
+   AC1
+END_IF
+SPEECH Would you like to buy the Air Strike spell for $3000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -3000
+   INV 23
+END_IF
+NPC 13
+X 726
+Y 700
+NAME Water Strike
+AC0
+IF_MONEY 3000
+   AC1
+END_IF
+SPEECH Would you like to buy the Water Strike spell for $3000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -3000
+   INV 24
+END_IF
+NPC 14
+X 721
+Y 703
+NAME Earth Strike
+AC0
+IF_MONEY 3000
+   AC1
+END_IF
+SPEECH Would you like to buy the Earth Strike spell for $3000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -3000
+   INV 25
+END_IF
+NPC 15
+X 726
+Y 703
+NAME Fire Strike
+AC0
+IF_MONEY 3000
+   AC1
+END_IF
+SPEECH Would you like to buy the Fire Strike spell for $3000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -3000
+   INV 26
+END_IF
+NPC 16
+X 721
+Y 706
+NAME Summon Lightning
+AC0
+IF_MONEY 5000
+   AC1
+END_IF
+SPEECH Would you like to buy the Summon Lightning spell for $5000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -5000
+   INV 27
+END_IF
+NPC 17
+X 726
+Y 706
+NAME Ball of Energy
+AC0
+IF_MONEY 5000
+   AC1
+END_IF
+SPEECH Would you like to buy the Ball of Energy spell for $5000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -5000
+   INV 28
+END_IF
+NPC 18
+X 721
+Y 709
+NAME Twin Fires
+AC0
+IF_MONEY 5000
+   AC1
+END_IF
+SPEECH Would you like to buy the Twin Fires spell for $5000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -5000
+   INV 29
+END_IF
+NPC 19
+X 726
+Y 709
+NAME Lindin Flames
+AC0
+IF_MONEY 7000
+   AC1
+END_IF
+SPEECH Would you like to buy the Lindin Flames spell for $7000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -7000
+   INV 30
+END_IF
+NPC 20
+X 721
+Y 712
+NAME Argadon Vines
+AC0
+IF_MONEY 7000
+   AC1
+END_IF
+SPEECH Would you like to buy the Argadon Vines spell for $7000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -7000
+   INV 31
+END_IF
+NPC 21
+X 726
+Y 712
+NAME Methos Smoke
+AC0
+IF_MONEY 7000
+   AC1
+END_IF
+SPEECH Would you like to buy the Methos Smoke spell for $7000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -7000
+   INV 32
+END_IF
+NPC 22
+X 721
+Y 715
+NAME Bohalmia Winds
+AC0
+IF_MONEY 7000
+   AC1
+END_IF
+SPEECH Would you like to buy the Bohalmia Winds spell for $7000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -7000
+   INV 33
+END_IF
+NPC 23
+X 726
+Y 715
+NAME Dark Magic
+AC0
+IF_MONEY 9000
+   AC1
+END_IF
+SPEECH Would you like to buy the Dark Magic spell for $9000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -9000
+   INV 34
+END_IF
+NPC 24
+X 721
+Y 718
+NAME Evil Magic
+AC0
+IF_MONEY 10000
+   AC1
+END_IF
+SPEECH Would you like to buy the Evil Magic spell for $10000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -10000
+   INV 35
+END_IF
+NPC 25
+X 726
+Y 718
+NAME Extreme Magic
+AC0
+IF_MONEY 14000
+   AC1
+END_IF
+SPEECH Would you like to buy the Extreme Magic spell for $14000?
+REPLY _YES_NO
+IF_YES
+   IF_AC1
+      SPEECH Here you go!
+      REPLY Thanks!
+   END_IF
+   IF_AC0
+      SPEECH Well?
+      REPLY Oops, I don't have enough money.
+      SPEECH  
+      REPLY  
+   END_IF
+   MONEY -14000
+   INV 36
+END_IF
+NPC 26
+X 624
+Y 108
+NAME Merchant
+SPEECH Welcome to the store!
+REPLY _SKIP
+STORE
+
+NPC 27
+X 245
+Y 274
+NAME Bruno
+TALK 1
+IF_AC1
+SPEECH What are you doing here?
+REPLY Your friend asked me to talk to you.
+SPEECH No he didn't.
+REPLY How are you supposed to know?
+SPEECH Well...okay fine. So what do you want?
+REPLY Well I'm on a quest to destroy the Magic Hat.
+SPEECH HAHAHAHA! What idiot gave you that quest?
+REPLY Your friend.
+SPEECH Erm, okay. Well what do you need my help on?
+REPLY Where is Magic Island?
+SPEECH How should I know!?
+REPLY Your friend told me you'd know.
+SPEECH Oh yeah, I do know.
+REPLY _SKIP
+SPEECH Tell him this code: X92YU#~.
+REPLY What's it mean?
+SPEECH It's for his teleportation spell. It tells it where to go.
+REPLY Cool. So are we done?
+SPEECH What, you don't like me!?
+REPLY No no, I just thought you didn't want to talk to me.
+SPEECH WHAT MADE YOU THINK THAT?!?!?!?
+REPLY I'm going to go...
+TALKED
+GOTO Herestill
+END_IF
+IF_AC0
+SPEECH Why are YOU here?
+REPLY Um...
+SPEECH  
+REPLY  
+END_IF
+Herestill:
+TALK 28
+IF_AC1
+   SPEECH So you've come back.
+   REPLY Why didn't you tell me about the magic card?
+   SPEECH It didn't occur to me.
+   REPLY Anyway, do you have one?
+   SPEECH No, but if you give me some iron ore I'll turn it into one.
+   REPLY Okay. See you soon!
+   GOTO GetOre
+END_IF
+SPEECH What?
+REPLY I dunno.
+GetOre:
+   IF_INV 15
+      SPEECH Do you have the iron ore for a magic card?
+      REPLY Yes.
+      SPEECH Okay, one second...
+      REPLY _SKIP
+      RMINV 15
+      INV 41
+      SPEECH There you go. Do you want me to teleport you?
+      REPLY No, it's too far away from the island.
+      SPEECH Okay then, show this to the sorcerer guy.
+      REPLY Thanks!
+      SPEECH  
+      REPLY  
+   END_IF
+   SPEECH Do you have the iron ore for a magic card?
+   REPLY No.
+NPC 28
+X 690
+Y 721
+NAME The Sorcerer
+TALK 27
+IF_AC0
+   SPEECH Hello!
+   REPLY Hi!
+   SPEECH  
+   REPLY  
+END_IF
+SPEECH Welcome young wizard.
+REPLY Yeah, um, can you teleport me to Magic Island?
+SPEECH I suppose I could. But have you thought it through?
+REPLY Yes.
+SPEECH Alrighty then. However, can I ask you a favor beforehand?
+REPLY _SKIP
+SPEECH I need you to kill the monsters in my backyard.
+REPLY Well I suppose I could.
+SPEECH Thank you!
+REPLY _SKIP
+GOTO HelpKill
+HelpKill:
+SLAY 02 11
+IF_AC1
+   SPEECH Thank you.
+   REPLY How did you know I killed it?
+   SPEECH With magic of course.
+   REPLY Cool. So can I go now?
+   SPEECH Well...no. The only way around a tele-block is with a magic card.
+   REPLY Where could I get one of those?
+   SPEECH My friend Bruno has one.
+   REPLY ...Why didn't he tell me about that earlier!?!?!?
+   SPEECH Well I don't know. Why didn't you talk to him earlier?
+   REPLY ...
+   SPEECH Anyway, ask him for the card.
+   REPLY _SKIP
+   TALKED
+   GOTO Card
+END_IF
+IF_AC0
+   SPEECH You haven't killed them yet...
+   REPLY _SKIP
+END_IF
+Card:
+   IF_INV 41
+      SPEECH You got a magic card! Okay, let me take you to Magic Island...
+      REPLY _SKIP
+      RMINV 41
+      SPEECH Wait, you'll need a Magic Shield first.
+      REPLY _SKIP
+      INV 12
+      SPEECH Okay. Good luck!
+      TELE 716 793
+   END_IF
+   SPEECH You haven't got a magic card.
+   REPLY _SKIP
+NPC 29
+X 712
+Y 793
+NAME Person
+SPEECH Hello.
+REPLY Why are you here?
+SPEECH The hat hasn't killed me yet!
+REPLY But you're standing right in front of it.
+SPEECH It hasn't killed me yet though, so I don't care how weird it is.
+REPLY _SKIP
+SPEECH Anyway, would you like to leave?
+REPLY _YES_NO
+IF_YES
+   TELE 315 329
+END_IF
+SPEECH Well I'll give you an inventory of Reheals. Good luck!
+REPLY Thanks!
+INV 9
+INV 9
+INV 9
+INV 9
+INV 9
+INV 9
+INV 9
+INV 9
+
+NPC 30
+X 717
+Y 801
+NAME Guard
+SPEECH Welcome to our refuge from the evil Magic Hat.
+REPLY _SKIP
+TELE 717 803
+
+NPC 31
+X 719
+Y 801
+NAME Guard
+SPEECH I let people out of our refuge.
+REPLY _SKIP
+TELE 719 799
+
+NPC 32
+X 715
+Y 809
+NAME Peasant
+SPEECH Hello.
+REPLY _SKIP
+
+NPC 33
+X 723
+Y 808
+NAME Peasant
+SPEECH We're so lucky to survive the Magic Hat's wrath, aren't we?
+REPLY _SKIP

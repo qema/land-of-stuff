@@ -1,0 +1,210 @@
+None
+X
+0
+0
+0
+Dagger
+W
+10
+1
+1
+Sword
+W
+70
+5
+1
+Scimitar
+W
+200
+9
+10
+Battle Axe
+W
+540
+15
+20
+Wooden Shield
+S
+5
+1
+1
+Bronze Shield
+S
+60
+5
+1
+Iron Shield
+S
+185
+10
+10
+Steel Shield
+S
+500
+15
+20
+Reheal
+H
+20
+0
+0
+Dave's Sword
+W
+0
+20
+1
+Dead Hat
+X
+0
+0
+0
+Magic Shield
+S
+0
+300
+50
+Brownian Armor
+S
+15000
+25
+60
+Pickaxe
+X
+10
+0
+1
+Iron Ore
+X
+200
+0
+0
+Adonis Sword
+W
+2500000
+68
+70
+Adonis Shield
+S
+2500000
+66
+70
+Dual Strike
+W
+4500000
+40
+50
+Dilemma
+W
+4000000
+96
+80
+Scaled Sword
+W
+15000
+30
+30
+Scaled Shield
+S
+12500
+30
+30
+Blue Puff Scale
+X
+75000
+0
+0
+Air Strike
+M
+5000
+3
+20
+Water Strike
+M
+5000
+4
+23
+Earth Strike
+M
+5000
+5
+26
+Fire Strike
+M
+5000
+6
+30
+Summon Lightning
+M
+7000
+8
+34
+Ball of Energy
+M
+7000
+10
+38
+Twin Fires
+M
+7000
+12
+44
+Lindin Flames
+M
+10000
+14
+52
+Argadon Vines
+M
+10000
+17
+60
+Methos Smoke
+M
+10000
+20
+68
+Bohalmia Winds
+M
+10000
+24
+77
+Dark Magic
+M
+15000
+30
+88
+Evil Magic
+M
+17000
+36
+98
+Extreme Magic
+M
+20000
+40
+99
+Empowered Dagger
+W
+2000000
+100
+10
+Empowered Sword
+W
+2000000
+126
+20
+Empowered Scimitar
+W
+2000000
+160
+30
+Empowered Battleaxe
+W
+2000000
+200
+40
+Magic Card
+X
+0
+0
+0
