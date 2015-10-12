@@ -76,6 +76,14 @@ Print "The Land of Stuff server v0.2"
 Print "by Andrew Wang"
 Print
 
+' Make users directory if it doesn't already exist
+dim cur_folder as string = Curdir
+if chdir("Users") then
+   mkdir("Users")
+else
+   chdir(cur_folder)
+end if
+
 dim shared As socket listensock,acceptsock
 dim shared As sockaddr_in inetaddr
 dim shared As wsadata wsad
