@@ -1,5 +1,5 @@
 # Land of Stuff
-The Land of Stuff is a multiplayer online role playing game written in FreeBASIC ([freebasic.net](http://freebasic.net). Players explore a vast world solo or with friends, battling monsters, gaining loot and completing story quests.
+The Land of Stuff is a multiplayer online role playing game written in FreeBASIC ([freebasic.net](http://freebasic.net)). Players explore a vast world solo or with friends, battling monsters, gaining loot and completing story quests.
 
 ![Land of Stuff](http://wanganzhou.com/images/los/screen26.png)
 
@@ -24,18 +24,19 @@ If you want to play online:
 Note that you must run archive.exe after making any changes in the Data\ folder in order to save them in data.los. Otherwise, they will be overwritten when the client unpacks data.los. This is so that you can distribute your customizations easily by simply packing data.los, client.exe and config.ini.
 
 ## Using the Map Editor (mapedit.exe)
-Arrow keys - pan around
-Number keys - change the currently selected tile to this tile (0 through 9)
-n - New map
-s - Save map
-c - New NPC
-p - Set starting point of players to the currently selected point
-t - Place a "special" non-numeric tile
-e - Create enemy at current location
-d - Delete enemy at current location
-v - View entire map as a mini-map
-  While in this map mode, you have some new commands at your disposal:
-	g - Teleport to location
-	c - Fill a whole area with a certain tile by dragging
-	t - Randomly scatter a tile type onto an area by dragging (e.g. for trees)
-	x - Exit minimap mode
+* Arrow keys - pan around  
+* Number keys - change the currently selected tile to this tile (0 through 9)  
+* n - New map  
+* s - Save map  
+* c - New NPC  
+* p - Set starting point of players to the currently selected point  
+* t - Place a "special" non-numeric tile  
+* e - Create enemy at current location  
+* d - Delete enemy at current location  
+* v - View entire map as a mini-map (enables mini-map mode)  
+
+While in mini-map mode, you have some new commands at your disposal:  
+* g - Teleport to location  
+* c - Fill a whole area with a certain tile by dragging  
+* t - Randomly scatter a tile type onto an area by dragging (e.g. for trees)  
+* x - Exit minimap mode  
