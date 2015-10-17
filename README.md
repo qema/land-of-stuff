@@ -1,6 +1,8 @@
 # Land of Stuff
 The Land of Stuff is a multiplayer online role playing game written in FreeBASIC ([freebasic.net](http://freebasic.net)). Players explore a vast world solo or with friends, battling monsters, gaining loot and completing story quests.
 
+Pull requests are welcome.
+
 ![Land of Stuff](http://wanganzhou.com/images/los/screen26.png)
 
 Full game info at [http://wanganzhou.com/land-of-stuff.html](http://wanganzhou.com/land-of-stuff.html)
